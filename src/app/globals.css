@@ -1,0 +1,97 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  /* Updated to a subtle palette similar to pkmn.gg */
+  --background: #f6f6f6;    /* light grey background */
+  --foreground: #333;       /* dark grey text for better contrast */
+  --primary: #333;          /* neutral dark color for links and emphasis */
+  --secondary: #999;        /* lighter grey for borders and subtle accents */
+  --accent: #ccc;           /* even lighter grey for additional accents */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #212529;
+    --foreground: #f8f9fa;
+    --primary: #f8f9fa;      
+    --secondary: #6c757d;
+    --accent: #444;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600; /* slightly reduced from bold for a cleaner look */
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Card style: white background with subtle border & a very light shadow */
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Button style: minimal, white with grey border and subtle hover */
+.button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: var(--foreground);
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Input style: simple borders, neutral colors */
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--secondary);
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  color: var(--foreground);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(51, 51, 51, 0.25);
+}
